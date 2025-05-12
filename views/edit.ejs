@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chỉnh sửa người dùng</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>✏️ Chỉnh sửa người dùng</h1>
+  <form action="/edit/<%= user.id %>" method="POST">
+    <label>Tên:</label><br>
+    <input type="text" name="name" value="<%= user.name %>" required><br><br>
+    <label>Email:</label><br>
+    <input type="email" name="email" value="<%= user.email %>" required><br><br>
+    <button type="submit">Cập nhật</button>
+  </form>
+  <br>
+  <a href="/">⬅️ Quay lại</a>
+</body>
+</html>

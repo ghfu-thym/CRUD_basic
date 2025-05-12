@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Danh sách người dùng</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <h1>Danh sách người dùng</h1>
+  <a href="/create">➕ Thêm người dùng</a>
+  <table border="1" cellpadding="8">
+    <tr>
+      <th>ID</th><th>Tên</th><th>Email</th><th>Hành động</th>
+    </tr>
+    <% users.forEach(user => { %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <a href="/edit/<%= user.id %>">✏️ Sửa</a> |
+          <a href="/delete/<%= user.id %>" onclick="return confirm('Bạn có chắc muốn xóa?');">🗑️ Xóa</a>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</body>
+</html>
