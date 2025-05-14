@@ -15,12 +15,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Kết nối MySQL
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'yourpassword', // 🔁 Thay bằng mật khẩu thực tế
-  database: 'myappdb'
-});
+// const db = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: 'yourpassword', // 🔁 Thay bằng mật khẩu thực tế
+//   database: 'myappdb'
+// });
+const conn=mysql.createConnection(
+  {host:"sqllab10.mysql.database.azure.com",
+   user:"rootuser", 
+   password:"Hoang.phuoc2004", 
+   database:"mywebsite", 
+   port:3306, 
+   ssl:{ca:fs.readFileSync("{ca-cert filename}")}});
 
 db.connect((err) => {
   if (err) {
